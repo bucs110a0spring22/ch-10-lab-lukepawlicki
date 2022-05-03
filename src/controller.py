@@ -7,6 +7,11 @@ from src import enemy
 
 class Controller:
     def __init__(self, width=640, height=480):
+        '''
+        Initializes data for the controller
+        args: width- int, width of game screen
+              height- int, height of game screen
+        '''
         pygame.init()
         self.width = width
         self.height = height
@@ -28,6 +33,9 @@ class Controller:
         self.state = "GAME"
 
     def mainLoop(self):
+        '''
+        Used to see whether the game is ongoing or over
+        '''
         while True:
             if(self.state == "GAME"):
                 self.gameLoop()
@@ -35,6 +43,9 @@ class Controller:
                 self.gameOver()
 
     def gameLoop(self):
+        '''
+        Code for the main part of the game
+        '''
         while self.state == "GAME":
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
@@ -62,6 +73,8 @@ class Controller:
 
             # redraw the entire screen
             self.enemies.update()
+            if not self.enemies.update:
+              self.enemies.kill()
             self.screen.blit(self.background, (0, 0))
             if(self.hero.health == 0):
                 self.state = "GAMEOVER"
@@ -71,6 +84,9 @@ class Controller:
             pygame.display.flip()
 
     def gameOver(self):
+        '''
+        Prints out the game over message on the screen when the hero loses all of his health
+        '''
         self.hero.kill()
         myfont = pygame.font.SysFont(None, 30)
         message = myfont.render('Game Over', False, (0, 0, 0))

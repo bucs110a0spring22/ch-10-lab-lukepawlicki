@@ -8,20 +8,21 @@
 Replace anything surrounded by the `< >` symbols._
 
 ## SUMMARY:
- < Provide a short description of your program's functionality. No more than a couple sentences. >
+ This program is a game that involves one player and 3 enemies. When the player collides with an enemy, the code randomly assigns whether the fight was one or lost. If the player lost the fight, the hero loses health. When the health gets to zero, the game is over.
 #### Unique Feature
- < Describe the unique feature you added >
+ Made it so that the enemies only move if they are in a certain part of the screen. If they are not in the defined region, then they stop moving.
 
 ## GRACE DAYS
-Grace days used for this assignment: < # >
+Grace days used for this assignment: 0
 
-Grace days remaining: < # >/5
+Grace days remaining: 5/5
 
 ## KNOWN BUGS AND INCOMPLETE PARTS:
- < What parts of the project you were not able to complete >
+ None
 
 ## REFERENCES:
- < List any outside resources used >
+ Python Docs
+ Pygame Docs
 
 ## MISCELLANEOUS COMMENTS:
- < Anything you would like the grader to know >
+ None
